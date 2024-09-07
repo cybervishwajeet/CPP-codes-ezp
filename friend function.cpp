@@ -1,27 +1,27 @@
+// code by vishwa
 #include<iostream>
 using namespace std;
-
-class A
+class sample
 {
-	  int a,b;
-	  public:
-	  	void input()
-	  	{
-	  	    cout<<"enter the two numbers :";
-			cin>>a>>b;  	
-		}		
-		friend void add(A obj);		
+	int a;
+	int b;
+	public:
+		void setvalue()
+		{
+			a=25;
+			b=40;
+		}
+		friend float mean(sample m);
 };
-void add(A obj)
+float mean ( sample m)
 {
-	int c;
-	
-	c=obj.a+obj.b;
-	cout<<"addtion of two number is :"<<c;	
+	return float( m.a + m.b )/2.0;
 }
 int main()
 {
-	A object;
-	object.input();
-	add(object);
+	sample a;
+	a.setvalue();
+	cout<<"mean value :"<<mean(a)<<"\n";
+	
+	return 0;
 }
